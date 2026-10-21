@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación y Seguimiento — SEFIPLAN Veracruz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background: #ffffff;
+            padding: 20px;
+            max-width: 850px;
+            margin: 0 auto;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header-top {
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #800033;
+        }
+        .header-top h3 {
+            color: #800033;
+            font-size: 20px;
+        }
+        .header-top p {
+            font-size: 14px;
+            color: #666;
+        }
+        .nav-bar {
+            background: #800033;
+            padding: 12px 20px;
+            text-align: right;
+        }
+        .logout-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .title-bar {
+            background: #e6e0cc;
+            padding: 20px;
+            text-align: center;
+        }
+        .title-bar h1 {
+            font-size: 26px;
+            color: #444;
+        }
+        .fecha-hora {
+            text-align: right;
+            font-size: 13px;
+            color: #555;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        h2 {
+            font-size: 18px;
+            color: #444;
+            margin: 30px 0 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #ddd;
+        }
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+            font-size: 15px;
+        }
+        .data-grid p strong {
+            display: inline-block;
+            min-width: 160px;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #f0f0f0;
+            font-weight: bold;
+        }
+        .text-right {
+            text-align: right;
+        }
+        .total-row {
+            text-align: right;
+            font-size: 22px;
+            font-weight: bold;
+            color: #800033;
+            padding: 15px 10px;
+        }
+        .info-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 3px solid #800033;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+        .observaciones {
+            background: #fff9e6;
+            padding: 15px;
+            border-left: 3px solid #cc8800;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- === ENCABEZADO === -->
+    <div class="header-top">
+        <h3>GOBIERNO DEL ESTADO DE VERACRUZ</h3>
+        <p>SEFIPLAN · Secretaría de Finanzas y Planeación<br>OVH — Oficina Virtual de Hacienda</p>
+    </div>
+
+    <!-- === BARRA DE NAVEGACIÓN === -->
+    <div class="nav-bar">
+        <a href="#" class="logout-link">Salir</a>
+    </div>
+
+    <!-- === FECHA Y HORA DE ACCESO === -->
+    <div class="fecha-hora" id="fechaHora"></div>
+
+    <!-- === TÍTULO === -->
+    <div class="title-bar">
+        <h1>Validación y Seguimiento de Trámite Vehicular</h1>
+    </div>
+
+    <!-- === DATOS DEL VEHÍCULO === -->
+    <h2>DATOS DEL VEHÍCULO</h2>
+    <div class="data-grid">
+        <p><strong>PLACA:</strong> ALTA</p>
+        <p><strong>NÚMERO DE SERIE (VIN):</strong> LLCK5GLK4AP101149</p>
+        <p><strong>Marca:</strong> ITALIKA</p>
+        <p><strong>Línea:</strong> VORT — x300R</p>
+        <p><strong>Número de motor:</strong> LC178MNQ414671</p>
+        <p><strong>Color:</strong> ROJO</p>
+        <p><strong>Modelo:</strong> 2023</p>
+    </div>
+
+    <!-- === CONCEPTO DE PAGO === -->
+    <h2>CONCEPTO DE PAGO</h2>
+    <table>
+        <tr>
+            <th>Referencia</th>
+            <th>Descripción</th>
+            <th class="text-right">Importe</th>
+        </tr>
+        <tr>
+            <td>2408</td>
+            <td>DERECHOS DE CONTROL VEHICULAR (2023-2025)</td>
+            <td class="text-right">$2,138.67</td>
+        </tr>
+        <tr>
+            <td>2408</td>
+            <td>DERECHOS DE CONTROL VEHICULAR (2026)</td>
+            <td class="text-right">$1,868.34</td>
+        </tr>
+        <tr>
+            <td>1001</td>
+            <td>FOMENTO A LA EDUCACIÓN 2026</td>
+            <td class="text-right">$930.00</td>
+        </tr>
+        <tr>
+            <td>1986</td>
+            <td>ACTUALIZACIÓN DE DERECHOS</td>
+            <td class="text-right">$625.44</td>
+        </tr>
+        <tr>
+            <td>4206</td>
+            <td>PAGO EFECTUADO — 05/10/2026</td>
+            <td class="text-right">−$1,739.00</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>IMPORTE PARCIAL</strong></td>
+            <td class="text-right"><strong>$3,823.45</strong></td>
+        </tr>
+        <tr>
+            <td colspan="2">DESCUENTO</td>
+            <td class="text-right">−$1,123.00</td>
+        </tr>
+    </table>
+    <div class="total-row">IMPORTE TOTAL A PAGAR: $ 2,700.45</div>
+
+    <!-- === FECHA LÍMITE === -->
+    <h2>FECHA LÍMITE DE PAGO</h2>
+    <div class="info-box">
+        <p><strong>26 de octubre de 2026</strong> — A partir de esta fecha, el descuento aplicado podría perderse y el monto a pagar será de $3,823.45</p>
+    </div>
+
+    <!-- === OBSERVACIONES === -->
+    <h2>OBSERVACIONES</h2>
+    <div class="observaciones">
+        <strong>📅 Pago programado con descuento hasta:</strong> 26 de octubre de 2026<br>
+        <strong>⚠️ Sin observaciones adicionales</strong>
+    </div>
+
+    <!-- === SEGUIMIENTO DE LA OPERACIÓN === -->
+    <h2>SEGUIMIENTO DE LA OPERACIÓN</h2>
+    <div class="info-box">
+        <p>• Línea de Captura: <strong>001227125623687724000233500</strong></p>
+        <p>• Esta operación fue generada el 05 de octubre de 2026.</p>
+        <p>• Gracias por su pago a través de las instituciones bancarias autorizadas.</p>
+    </div>
+
+    <!-- === INFORMACIÓN IMPORTANTE === -->
+    <h2>INFORMACIÓN IMPORTANTE</h2>
+    <div class="info-box">
+        <p>• La información aquí mostrada corresponde exactamente a los datos con los que fue generada la operación.</p>
+        <p>• Si alguno de los datos es diferente al impreso en su forma de pago, es posible que el formato esté alterado o falsificado.</p>
+        <p>• Cuenta con 10 días hábiles después de la fecha límite para cualquier aclaración.</p>
+        <p>• Si tiene alguna duda, favor de comunicarse al Departamento de Atención a Contribuyentes.</p>
+    </div>
+
+    <script>
+        function actualizarFechaHora() {
+            const el = document.getElementById('fechaHora');
+            const fmt = new Intl.DateTimeFormat('es-MX', {
+                day: '2-digit', month: '2-digit', year: 'numeric',
+                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+            });
+            el.textContent = 'FECHA Y HORA DE ACCESO: ' + fmt.format(new Date());
+        }
+        actualizarFechaHora();
+        setInterval(actualizarFechaHora, 1000);
+    </script>
+
+</body>
+</html>
